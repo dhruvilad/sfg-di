@@ -2,6 +2,7 @@ package com.example.sfgdi;
 
 import com.example.pet.controllers.PetController;
 import com.example.sfgdi.config.SfgConfiguration;
+import com.example.sfgdi.config.SfgConstructorConfiguration;
 import com.example.sfgdi.controllers.*;
 import com.example.sfgdi.datasource.FakeDatasource;
 import com.example.sfgdi.services.ProtoTypeBean;
@@ -73,6 +74,15 @@ public class SfgDiApplication {
 		System.out.println(sfgConfiguration.getUsername());
 		System.out.println(sfgConfiguration.getPassword());
 		System.out.println(sfgConfiguration.getJdbcurl());
+
+		System.out.println("--------------------- Constructor Binding ------------------");
+
+		SfgConstructorConfiguration sfgConstructorConfiguration=ctx.getBean(SfgConstructorConfiguration.class);
+		System.out.println(sfgConstructorConfiguration.getUsername());
+		System.out.println(sfgConstructorConfiguration.getPassword());
+		System.out.println(sfgConstructorConfiguration.getJdbcurl());
+
+
 	}
 
 }
