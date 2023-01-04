@@ -2,6 +2,7 @@ package com.example.sfgdi;
 
 import com.example.pet.controllers.PetController;
 import com.example.sfgdi.controllers.*;
+import com.example.sfgdi.datasource.FakeDatasource;
 import com.example.sfgdi.services.ProtoTypeBean;
 import com.example.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -59,6 +60,11 @@ public class SfgDiApplication {
 		ProtoTypeBean protoTypeBean2=ctx.getBean(ProtoTypeBean.class);
 		System.out.println(protoTypeBean2.getMyScope());
 
+		System.out.println("------------- property file demo ------------------");
+		FakeDatasource fakeDatasource=ctx.getBean(FakeDatasource.class);
+		System.out.println(fakeDatasource.getUsername());
+		System.out.println(fakeDatasource.getPassowrd());
+		System.out.println(fakeDatasource.getJdbcurl());
 	}
 
 }
